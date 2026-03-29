@@ -1,0 +1,5 @@
+collect_log.txt
+__pycache__/
+*.pyc
+.env
+schedule_task.ps1

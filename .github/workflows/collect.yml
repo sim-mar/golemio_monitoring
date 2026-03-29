@@ -1,0 +1,54 @@
+name: Collect waste data
+
+on:
+  schedule:
+    # Časy jsou UTC — spouštíme ~5 min po každém měření senzorů
+    # Papír:          01:11, 07:11, 13:11, 19:11 UTC
+    # Multikomoditní: 00:04, 06:04, 12:04, 18:04 UTC
+    # Kovy:           04:26, 10:26, 16:26, 22:26 UTC
+    # Barevné sklo:   01:30, 07:30, 13:30, 19:30 UTC
+    - cron: '09 00 * * *'
+    - cron: '16 01 * * *'
+    - cron: '35 01 * * *'
+    - cron: '31 04 * * *'
+    - cron: '09 06 * * *'
+    - cron: '16 07 * * *'
+    - cron: '35 07 * * *'
+    - cron: '31 10 * * *'
+    - cron: '09 12 * * *'
+    - cron: '16 13 * * *'
+    - cron: '35 13 * * *'
+    - cron: '31 16 * * *'
+    - cron: '09 18 * * *'
+    - cron: '16 19 * * *'
+    - cron: '35 19 * * *'
+    - cron: '31 22 * * *'
+  workflow_dispatch:  # možnost spustit ručně
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Collect data & build HTML
+        env:
+          GOLEMIO_TOKEN: ${{ secrets.GOLEMIO_TOKEN }}
+        run: python collect_data.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kasparovo_namesti_odpady.csv index.html
+          git diff --staged --quiet || git commit -m "data: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push

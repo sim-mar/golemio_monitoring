@@ -7,6 +7,9 @@ import csv
 import json
 import os
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
+
+PRAGUE_TZ = ZoneInfo("Europe/Prague")
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_FILE   = os.path.join(SCRIPT_DIR, "kasparovo_namesti_odpady.csv")
@@ -86,12 +89,10 @@ def parse_csv(path: str) -> tuple[dict, dict]:
 
 
 def fmt_ts(ts: str) -> str:
-    """ISO timestamp → čitelný čas CET."""
+    """ISO timestamp → čitelný čas v časové zóně Europe/Prague."""
     try:
-        dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
-        offset = 2  # CEST (od posledního března)
-        h = (dt.hour + offset) % 24
-        return f"{dt.day}.{dt.month}. {h:02d}:{dt.minute:02d}"
+        dt = datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone(PRAGUE_TZ)
+        return f"{dt.day}.{dt.month}. {dt.hour:02d}:{dt.minute:02d}"
     except Exception:
         return ts
 
@@ -154,9 +155,8 @@ def fmt_svoz(dalsi_svoz: str, dny_svozu: str) -> str:
 
 
 def build(series: dict, meta: dict) -> str:
-    dt  = datetime.now(timezone.utc)
-    h_local = (dt.hour + 2) % 24
-    now = f"{dt.day}. {dt.month}. {dt.year} {h_local:02d}:{dt.minute:02d}"
+    dt  = datetime.now(PRAGUE_TZ)
+    now = f"{dt.day}. {dt.month}. {dt.year} {dt.hour:02d}:{dt.minute:02d}"
 
     # Aktuální hodnoty (poslední záznam)
     latest = {}

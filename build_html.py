@@ -418,7 +418,7 @@ def build(series: dict, meta: dict) -> str:
 
   <div class="info-box">
     <strong>Data:</strong> Golemio Open Data API v2 · Stanice 5262 · Senzory Sensoneo ·
-    Sběr každých ~6h automaticky. CSV: <code>kasparovo_namesti_odpady.csv</code>
+    Sběr každou hodinu (07:00–00:00 CEST) automaticky přes GitHub Actions.
   </div>
 
 </main>

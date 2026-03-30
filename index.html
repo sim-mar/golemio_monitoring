@@ -70,7 +70,7 @@
 <body>
 
 <header>
-  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 30. 3. 2026 15:06 UTC</div>
+  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 30. 3. 2026 19:22</div>
 </header>
 
 <div class="hero">
@@ -80,7 +80,7 @@
       <span>📍 Praha 8 · Stanice č. 0008/067</span>
       <span class="tag">Sensoneo</span>
       <span class="tag">4 nádoby</span>
-      <span class="tag">17 měření</span>
+      <span class="tag">19 měření</span>
     </div>
   </div>
 </div>
@@ -95,7 +95,7 @@
       <canvas id="dPapir" class="donut-canvas"></canvas>
       <div class="donut-meta"><span class="badge badge-ok">OK</span></div>
       <div class="donut-info">
-        <div>⏱ 30.3. 14:11</div>
+        <div>⏱ 30.3. 17:11</div>
         <div>🚛 St 1.4.2026 <span style='color:var(--muted)'>(Po, St, Pá)</span></div>
       </div>
     </div>
@@ -122,7 +122,7 @@
       <canvas id="dSklo" class="donut-canvas"></canvas>
       <div class="donut-meta"><span class="badge badge-danger">Kritické</span></div>
       <div class="donut-info">
-        <div>⏱ 30.3. 13:30</div>
+        <div>⏱ 30.3. 18:31</div>
         <div>🚛 Čt 9.4.2026 <span style='color:var(--muted)'>(Čt)</span></div>
       </div>
     </div>
@@ -181,21 +181,21 @@
 
   <div class="info-box">
     <strong>Data:</strong> Golemio Open Data API v2 · Stanice 5262 · Senzory Sensoneo ·
-    Sběr každých ~6h automaticky. CSV: <code>kasparovo_namesti_odpady.csv</code>
+    Sběr každou hodinu (07:00–00:00 CEST) automaticky přes GitHub Actions.
   </div>
 
 </main>
 
 <footer>
   <a href="https://golemio.cz" target="_blank">Golemio API</a> ·
-  Kašparovo náměstí 350/1, Praha 8 · Generováno 30. 3. 2026 15:06 UTC
+  Kašparovo náměstí 350/1, Praha 8 · Generováno 30. 3. 2026 19:22
 </footer>
 
 <script>
-const labels   = ["29.3. 11:26", "29.3. 13:04", "29.3. 14:11", "29.3. 15:30", "29.3. 18:31", "29.3. 19:11", "29.3. 20:04", "29.3. 20:31", "29.3. 22:04", "30.3. 07:11", "30.3. 10:30", "30.3. 11:04", "30.3. 11:26", "30.3. 13:04", "30.3. 13:30", "30.3. 14:11", "30.3. 15:38"];
+const labels   = ["29.3. 11:26", "29.3. 13:04", "29.3. 14:11", "29.3. 15:30", "29.3. 18:31", "29.3. 19:11", "29.3. 20:04", "29.3. 20:31", "29.3. 22:04", "30.3. 07:11", "30.3. 10:30", "30.3. 11:04", "30.3. 11:26", "30.3. 13:04", "30.3. 13:30", "30.3. 14:11", "30.3. 15:38", "30.3. 17:11", "30.3. 18:31"];
 const datasets = [{
             label: "Pap\u00edr",
-            data: ["null", "null", 99, "null", "null", 98, "null", "null", "null", 98, "null", "null", "null", "null", "null", 54, "null"],
+            data: ["null", "null", 99, "null", "null", 98, "null", "null", "null", 98, "null", "null", "null", "null", "null", 54, "null", 56, "null"],
             borderColor: "#e2e8f0",
             backgroundColor: "rgba(226,232,240,0.08)",
             pointBackgroundColor: "#e2e8f0",
@@ -208,7 +208,7 @@ const datasets = [{
         },
 {
             label: "Multikomoditn\u00ed",
-            data: ["null", 98, "null", "null", "null", "null", 92, "null", 99, "null", "null", 47, "null", 53, "null", "null", "null"],
+            data: ["null", 98, "null", "null", "null", "null", 92, "null", 99, "null", "null", 47, "null", 53, "null", "null", "null", "null", "null"],
             borderColor: "#a78bfa",
             backgroundColor: "rgba(167,139,250,0.12)",
             pointBackgroundColor: "#a78bfa",
@@ -221,7 +221,7 @@ const datasets = [{
         },
 {
             label: "Kovy",
-            data: [48, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", 48, "null", "null", "null", 47],
+            data: [48, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", 48, "null", "null", "null", 47, "null", "null"],
             borderColor: "#fbbf24",
             backgroundColor: "rgba(251,191,36,0.12)",
             pointBackgroundColor: "#fbbf24",
@@ -234,7 +234,7 @@ const datasets = [{
         },
 {
             label: "Barevn\u00e9 sklo",
-            data: ["null", "null", "null", 100, 100, "null", "null", 100, "null", "null", 99, "null", "null", "null", 99, "null", "null"],
+            data: ["null", "null", "null", 100, 100, "null", "null", 100, "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", 99],
             borderColor: "#60a5fa",
             backgroundColor: "rgba(96,165,250,0.12)",
             pointBackgroundColor: "#60a5fa",
@@ -296,7 +296,7 @@ new Chart(document.getElementById('dPapir'), {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [54, 46],
+                    data: [56, 44],
                     backgroundColor: ['#e2e8f0', 'rgba(255,255,255,0.06)'],
                     borderWidth: 0
                 }]
@@ -310,7 +310,7 @@ new Chart(document.getElementById('dPapir'), {
                     ctx.font = `800 ${Math.min(w,h)*0.24}px Segoe UI`;
                     ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
                     ctx.fillStyle = '#34d399';
-                    ctx.fillText('54%', w/2, h/2);
+                    ctx.fillText('56%', w/2, h/2);
                     ctx.restore();
                 }
             }]

@@ -7,6 +7,7 @@ a přidává je do CSV. Spouštěj jako naplánovanou úlohu (Task Scheduler).
 import csv
 import json
 import os
+import sys
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -111,10 +112,10 @@ def collect() -> None:
     except urllib.error.HTTPError as e:
         body = e.read().decode(errors="replace")
         log(f"HTTP {e.code} při stahování stanice: {body}")
-        return
+        sys.exit(1)
     except Exception as e:
         log(f"Chyba při stahování: {e}")
-        return
+        sys.exit(1)
 
     station_name = props.get("name", "")
     station_id   = props.get("id", STATION_ID)
@@ -166,3 +167,4 @@ if __name__ == "__main__":
         build_html.main()
     except Exception as e:
         log(f"build_html selhal: {e}")
+        sys.exit(1)

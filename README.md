@@ -22,6 +22,12 @@ Vše běží automaticky přes **GitHub Actions** — bez nutnosti mít zapnutý
 
 Všechny nádoby jsou podzemního typu **3000 Podzemní SV**, vybavené senzory Sensoneo s adaptivní frekvencí měření (měří hustěji při vysokém zaplnění).
 
+## Dashboard
+
+Živý dashboard: **[sim-mar.github.io/golemio_monitoring](https://sim-mar.github.io/golemio_monitoring/)**
+
+Aktualizuje se automaticky při každém novém měření.
+
 ## Soubory
 
 | Soubor | Popis |
@@ -31,13 +37,7 @@ Všechny nádoby jsou podzemního typu **3000 Podzemní SV**, vybavené senzory 
 | `kasparovo_namesti_odpady.csv` | Časová řada měření |
 | `index.html` | Dashboard s grafy (generovaný automaticky) |
 | `.github/workflows/collect.yml` | GitHub Actions workflow |
-
-## Spuštění lokálně
-
-```bash
-pip install -r requirements.txt   # žádné externí závislosti, jen stdlib
-python collect_data.py            # stáhne data a přegeneruje HTML
-```
+| `schedule_task.ps1` | ~~Windows Task Scheduler~~ — již se nepoužívá, data sbírá GitHub Actions |
 
 ## Nastavení
 
@@ -46,6 +46,8 @@ API token je uložen jako GitHub secret `GOLEMIO_TOKEN`. Lokálně se používá
 ```bash
 GOLEMIO_TOKEN=<tvůj_token> python collect_data.py
 ```
+
+Lokální spouštění je jen pro testování — **produkční sběr dat běží výhradně přes GitHub Actions**.
 
 ## Data
 

@@ -9,7 +9,7 @@ Automatický sběr a vizualizace dat o zaplněnosti nádob na tříděný odpad 
 - Vygeneruje `index.html` s interaktivními grafy
 - Commituje změny zpět do repozitáře
 
-Vše běží automaticky přes **GitHub Actions** — bez nutnosti mít zapnutý počítač.
+Vše běží automaticky přes **GitHub Actions**.
 
 ## Monitorované nádoby
 

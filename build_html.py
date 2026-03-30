@@ -13,10 +13,10 @@ CSV_FILE   = os.path.join(SCRIPT_DIR, "kasparovo_namesti_odpady.csv")
 HTML_FILE  = os.path.join(SCRIPT_DIR, "index.html")
 
 COLORS = {
-    "Papír":                 {"line": "#e2e8f0", "fill": "rgba(226,232,240,0.08)"},
-    "Multikomoditní sběr":   {"line": "#a78bfa", "fill": "rgba(167,139,250,0.12)"},
-    "Kovy":                  {"line": "#fbbf24", "fill": "rgba(251,191,36,0.12)"},
-    "Barevné sklo":          {"line": "#60a5fa", "fill": "rgba(96,165,250,0.12)"},
+    "Papír":                 {"line": "#60a5fa", "fill": "rgba(96,165,250,0.08)"},
+    "Multikomoditní sběr":   {"line": "#fbbf24", "fill": "rgba(251,191,36,0.12)"},
+    "Kovy":                  {"line": "#64748b", "fill": "rgba(100,116,139,0.12)"},
+    "Barevné sklo":          {"line": "#a78bfa", "fill": "rgba(167,139,250,0.12)"},
 }
 def icon(color: str) -> str:
     return f'<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:{color};flex-shrink:0"></span>'

@@ -155,7 +155,8 @@ def fmt_svoz(dalsi_svoz: str, dny_svozu: str) -> str:
 
 def build(series: dict, meta: dict) -> str:
     dt  = datetime.now(timezone.utc)
-    now = f"{dt.day}. {dt.month}. {dt.year} {dt.hour:02d}:{dt.minute:02d} UTC"
+    h_local = (dt.hour + 2) % 24
+    now = f"{dt.day}. {dt.month}. {dt.year} {h_local:02d}:{dt.minute:02d}"
 
     # Aktuální hodnoty (poslední záznam)
     latest = {}

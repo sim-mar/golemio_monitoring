@@ -186,6 +186,7 @@ def build(series: dict, meta: dict) -> str:
             pointBackgroundColor: "{c['line']}",
             pointRadius: 5,
             pointHoverRadius: 7,
+            pointStyle: 'circle',
             borderWidth: 2.5,
             tension: 0.3,
             fill: false,
@@ -448,7 +449,7 @@ new Chart(document.getElementById('lineChart'), {{
                     font: {{ size: 11 }},
                     maxRotation: 45,
                     autoSkip: true,
-                    maxTicksLimit: 20
+                    maxTicksLimit: 12
                 }}
             }},
             y: {{

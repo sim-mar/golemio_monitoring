@@ -4,7 +4,7 @@ Automatický sběr a vizualizace dat o zaplněnosti nádob na tříděný odpad 
 
 ## Co to dělá
 
-- Každou hodinu (07:00–00:00 CEST) stáhne aktuální měření ze **[Golemio Open Data API v2](https://api.golemio.cz)**
+- Každou hodinu (07:00–00:00 CEST) + jednou ve 04:00 CEST stáhne aktuální měření ze **[Golemio Open Data API v2](https://api.golemio.cz)**
 - Uloží nová data do `kasparovo_namesti_odpady.csv`
 - Vygeneruje `index.html` s interaktivními grafy
 - Commituje změny zpět do repozitáře
@@ -37,7 +37,7 @@ Aktualizuje se automaticky při každém novém měření.
 | `kasparovo_namesti_odpady.csv` | Časová řada měření |
 | `index.html` | Dashboard s grafy (generovaný automaticky) |
 | `.github/workflows/collect.yml` | GitHub Actions workflow |
-| `schedule_task.ps1` | ~~Windows Task Scheduler~~ — již se nepoužívá, data sbírá GitHub Actions |
+
 
 ## Nastavení
 

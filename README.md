@@ -38,8 +38,6 @@ Aktualizuje se automaticky při každém novém měření.
 | `index.html` | Dashboard s grafy (generovaný automaticky) |
 | `.github/workflows/collect.yml` | GitHub Actions workflow |
 
-
-
 ## Data
 
 Senzory měří zaplnění 0–100 %. Škálování stavů:

@@ -13,10 +13,7 @@ import urllib.error
 from datetime import datetime, timezone
 
 # ── CONFIG ──────────────────────────────────────────────────────────────────
-API_TOKEN   = os.environ.get(
-    "GOLEMIO_TOKEN",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTEwMCwiaWF0IjoxNzc0ODAxNDEwLCJleHAiOjExNzc0ODAxNDEwLCJpc3MiOiJnb2xlbWlvIiwianRpIjoiZTYyMDcxMmMtNDBkMS00MTAxLTk1NWUtZTRiNWNkM2VkN2Q3In0.C0DGywJglpXaAzTuDF9GPH7bQ3Ulhst5uIFNkoVseus"
-)
+API_TOKEN   = os.environ.get("GOLEMIO_TOKEN")
 STATION_ID  = 5262
 STATION_URL = "https://api.golemio.cz/v2/sortedwastestations?latlng=50.11396,14.46900&range=100&limit=5&onlyMonitored=true"
 

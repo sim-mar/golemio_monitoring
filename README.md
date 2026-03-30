@@ -39,15 +39,6 @@ Aktualizuje se automaticky při každém novém měření.
 | `.github/workflows/collect.yml` | GitHub Actions workflow |
 
 
-## Nastavení
-
-API token je uložen jako GitHub secret `GOLEMIO_TOKEN`. Lokálně se používá token přímo v `collect_data.py` nebo přes environment proměnnou:
-
-```bash
-GOLEMIO_TOKEN=<tvůj_token> python collect_data.py
-```
-
-Lokální spouštění je jen pro testování — **produkční sběr dat běží výhradně přes GitHub Actions**.
 
 ## Data
 

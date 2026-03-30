@@ -4,6 +4,7 @@ Spouští se automaticky z collect_data.py po každém sběru.
 """
 
 import csv
+import html
 import json
 import os
 from datetime import datetime, timezone
@@ -148,7 +149,7 @@ def fmt_svoz(dalsi_svoz: str, dny_svozu: str) -> str:
         den = DAYS_CZ[d.weekday()]
         label = f"{den} {d.day}.{d.month}.{d.year}"
         if dny_svozu:
-            label += f" <span style='color:var(--muted)'>({dny_svozu})</span>"
+            label += f" <span style='color:var(--muted)'>({html.escape(dny_svozu)})</span>"
         return label
     except Exception:
         return dalsi_svoz

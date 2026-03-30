@@ -85,12 +85,14 @@ def load_last_measurements() -> dict[int, str]:
     if not os.path.exists(CSV_FILE):
         return last
     with open(CSV_FILE, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            try:
-                cid = int(row["kontejner_id"])
-                last[cid] = row["measured_at_utc"]
-            except (KeyError, ValueError):
-                pass
+        for row in csv.reader(f):
+            # nový formát: collected_at_utc(0), stanice_id(1), stanice_nazev(2),
+            # kontejner_id(3), sensor_id(4), druh_odpadu(5), zaplneni_pct(6), measured_at_utc(7)
+            if row and row[0].startswith("20") and len(row) >= 8:
+                try:
+                    last[int(row[3])] = row[7]
+                except (ValueError, IndexError):
+                    pass
     return last
 
 

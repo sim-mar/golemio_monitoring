@@ -284,6 +284,7 @@ def build(series: dict, meta: dict) -> str:
 
     /* ── LINE CHART ── */
     .chart-card{{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);margin-bottom:2.5rem}}
+    .chart-card canvas{{height:320px!important}}
 
     /* ── TABLE ── */
     .table-wrap{{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-bottom:2rem}}
@@ -371,7 +372,7 @@ def build(series: dict, meta: dict) -> str:
   <!-- LINE CHART -->
   <div class="section-head"><h2>Průběh zaplnění v čase</h2><div class="line"></div></div>
   <div class="chart-card">
-    <canvas id="lineChart" height="90"></canvas>
+    <canvas id="lineChart"></canvas>
   </div>
 
   <!-- TABLE -->
@@ -441,6 +442,7 @@ new Chart(document.getElementById('lineChart'), {{
     data: {{ labels, datasets }},
     options: {{
         responsive: true,
+        maintainAspectRatio: false,
         interaction: {{ mode: 'index', intersect: false }},
         scales: {{
             x: {{

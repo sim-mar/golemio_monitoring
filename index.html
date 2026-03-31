@@ -44,6 +44,7 @@
 
     /* ── LINE CHART ── */
     .chart-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);margin-bottom:2.5rem}
+    .chart-card canvas{height:320px!important}
 
     /* ── TABLE ── */
     .table-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-bottom:2rem}
@@ -70,7 +71,7 @@
 <body>
 
 <header>
-  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 31. 3. 2026 20:59</div>
+  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 31. 3. 2026 21:51</div>
 </header>
 
 <div class="hero">
@@ -80,7 +81,7 @@
       <span>📍 Praha 8 · Stanice č. 0008/067</span>
       <span class="tag">Sensoneo</span>
       <span class="tag">4 nádoby</span>
-      <span class="tag">43 měření</span>
+      <span class="tag">44 měření</span>
     </div>
   </div>
 </div>
@@ -122,7 +123,7 @@
       <canvas id="dSklo" class="donut-canvas"></canvas>
       <div class="donut-meta"><span class="badge badge-danger">Kritické</span></div>
       <div class="donut-info">
-        <div>⏱ 31.3. 18:31</div>
+        <div>⏱ 31.3. 20:31</div>
         <div>🚛 Čt 9.4.2026 <span style='color:var(--muted)'>(Čt)</span></div>
       </div>
     </div>
@@ -131,7 +132,7 @@
   <!-- LINE CHART -->
   <div class="section-head"><h2>Průběh zaplnění v čase</h2><div class="line"></div></div>
   <div class="chart-card">
-    <canvas id="lineChart" height="90"></canvas>
+    <canvas id="lineChart"></canvas>
   </div>
 
   <!-- TABLE -->
@@ -172,7 +173,7 @@
           <td>28.1.</td>
           <td>62 dní</td>
           <td>Čt 9.4.2026 <span style='color:var(--muted)'>(Čt)</span></td>
-          <td><span style="color:var(--danger)">17.3. 🔴</span></td>
+          <td><span style="color:var(--danger)">12.3. 🔴</span></td>
           <td><span class="badge badge-danger">Kritické</span></td>
         </tr>
       </tbody>
@@ -188,14 +189,14 @@
 
 <footer>
   <a href="https://golemio.cz" target="_blank">Golemio API</a> ·
-  Kašparovo náměstí 350/1, Praha 8 · Generováno 31. 3. 2026 20:59
+  Kašparovo náměstí 350/1, Praha 8 · Generováno 31. 3. 2026 21:51
 </footer>
 
 <script>
-const labels   = ["29.3. 11:26", "29.3. 13:04", "29.3. 14:11", "29.3. 15:30", "29.3. 18:31", "29.3. 19:11", "29.3. 20:04", "29.3. 20:31", "29.3. 22:04", "30.3. 07:11", "30.3. 10:30", "30.3. 11:04", "30.3. 11:26", "30.3. 13:04", "30.3. 13:30", "30.3. 14:11", "30.3. 15:38", "30.3. 17:11", "30.3. 18:31", "30.3. 19:11", "30.3. 19:26", "30.3. 20:04", "30.3. 22:04", "30.3. 23:26", "31.3. 04:11", "31.3. 05:31", "31.3. 06:04", "31.3. 07:26", "31.3. 08:04", "31.3. 08:30", "31.3. 10:30", "31.3. 11:04", "31.3. 11:26", "31.3. 12:11", "31.3. 13:04", "31.3. 14:11", "31.3. 15:26", "31.3. 15:30", "31.3. 17:11", "31.3. 18:31", "31.3. 19:11", "31.3. 19:26", "31.3. 20:04"];
+const labels   = ["29.3. 11:26", "29.3. 13:04", "29.3. 14:11", "29.3. 15:30", "29.3. 18:31", "29.3. 19:11", "29.3. 20:04", "29.3. 20:31", "29.3. 22:04", "30.3. 07:11", "30.3. 10:30", "30.3. 11:04", "30.3. 11:26", "30.3. 13:04", "30.3. 13:30", "30.3. 14:11", "30.3. 15:38", "30.3. 17:11", "30.3. 18:31", "30.3. 19:11", "30.3. 19:26", "30.3. 20:04", "30.3. 22:04", "30.3. 23:26", "31.3. 04:11", "31.3. 05:31", "31.3. 06:04", "31.3. 07:26", "31.3. 08:04", "31.3. 08:30", "31.3. 10:30", "31.3. 11:04", "31.3. 11:26", "31.3. 12:11", "31.3. 13:04", "31.3. 14:11", "31.3. 15:26", "31.3. 15:30", "31.3. 17:11", "31.3. 18:31", "31.3. 19:11", "31.3. 19:26", "31.3. 20:04", "31.3. 20:31"];
 const datasets = [{
             label: "Pap\u00edr",
-            data: ["null", "null", 99, "null", "null", 98, "null", "null", "null", 98, "null", "null", "null", "null", "null", 54, "null", 56, "null", 62, "null", "null", "null", "null", 65, "null", "null", "null", "null", "null", "null", "null", "null", 90, "null", 77, "null", "null", 74, "null", 80, "null", "null"],
+            data: ["null", "null", 99, "null", "null", 98, "null", "null", "null", 98, "null", "null", "null", "null", "null", 54, "null", 56, "null", 62, "null", "null", "null", "null", 65, "null", "null", "null", "null", "null", "null", "null", "null", 90, "null", 77, "null", "null", 74, "null", 80, "null", "null", "null"],
             borderColor: "#60a5fa",
             backgroundColor: "rgba(96,165,250,0.08)",
             pointBackgroundColor: "#60a5fa",
@@ -209,7 +210,7 @@ const datasets = [{
         },
 {
             label: "Multikomoditn\u00ed",
-            data: ["null", 98, "null", "null", "null", "null", 92, "null", 99, "null", "null", 47, "null", 53, "null", "null", "null", "null", "null", "null", "null", 49, 61, "null", "null", "null", 55, "null", 62, "null", "null", 61, "null", "null", 68, "null", "null", "null", "null", "null", "null", "null", 74],
+            data: ["null", 98, "null", "null", "null", "null", 92, "null", 99, "null", "null", 47, "null", 53, "null", "null", "null", "null", "null", "null", "null", 49, 61, "null", "null", "null", 55, "null", 62, "null", "null", 61, "null", "null", 68, "null", "null", "null", "null", "null", "null", "null", 74, "null"],
             borderColor: "#fbbf24",
             backgroundColor: "rgba(251,191,36,0.12)",
             pointBackgroundColor: "#fbbf24",
@@ -223,7 +224,7 @@ const datasets = [{
         },
 {
             label: "Kovy",
-            data: [48, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", 48, "null", "null", "null", 47, "null", "null", "null", 48, "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null"],
+            data: [48, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", 48, "null", "null", "null", 47, "null", "null", "null", 48, "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null"],
             borderColor: "#64748b",
             backgroundColor: "rgba(100,116,139,0.12)",
             pointBackgroundColor: "#64748b",
@@ -237,7 +238,7 @@ const datasets = [{
         },
 {
             label: "Barevn\u00e9 sklo",
-            data: ["null", "null", "null", 100, 100, "null", "null", 100, "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", "null", "null", "null", 99, "null", "null", "null", 99, 99, "null", "null", "null", "null", "null", "null", 93, "null", 99, "null", "null", "null"],
+            data: ["null", "null", "null", 100, 100, "null", "null", 100, "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", "null", "null", "null", 99, "null", "null", "null", 99, 99, "null", "null", "null", "null", "null", "null", 93, "null", 99, "null", "null", "null", 99],
             borderColor: "#a78bfa",
             backgroundColor: "rgba(167,139,250,0.12)",
             pointBackgroundColor: "#a78bfa",
@@ -256,6 +257,7 @@ new Chart(document.getElementById('lineChart'), {
     data: { labels, datasets },
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
         scales: {
             x: {
@@ -279,8 +281,7 @@ new Chart(document.getElementById('lineChart'), {
                 labels: {
                     color: '#e8edf5',
                     font: { size: 12 },
-                    usePointStyle: true,
-                    pointStyleWidth: 10
+                    usePointStyle: true
                 }
             },
             tooltip: {

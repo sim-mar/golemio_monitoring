@@ -53,7 +53,7 @@ def fetch_station() -> dict:
         STATION_URL,
         headers={"x-access-token": API_TOKEN, "Accept": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=15) as resp:
+    with urllib.request.urlopen(req, timeout=60) as resp:
         data = json.loads(resp.read().decode())
     if isinstance(data, dict) and data.get("type") == "FeatureCollection":
         features = data["features"]

@@ -287,7 +287,7 @@ def build(series: dict, meta: dict) -> str:
     .chart-card canvas{{height:320px!important}}
 
     /* ── TABLE ── */
-    .table-wrap{{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-bottom:2rem}}
+    .table-wrap{{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow-x:auto;box-shadow:var(--shadow);margin-bottom:2rem}}
     table{{width:100%;border-collapse:collapse;font-size:.88rem}}
     thead tr{{background:rgba(0,180,216,.08);border-bottom:1px solid var(--border)}}
     th{{padding:.85rem 1.25rem;text-align:left;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}}

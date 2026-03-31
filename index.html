@@ -70,7 +70,7 @@
 <body>
 
 <header>
-  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 31. 3. 2026 15:07</div>
+  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 31. 3. 2026 16:25</div>
 </header>
 
 <div class="hero">
@@ -80,7 +80,7 @@
       <span>📍 Praha 8 · Stanice č. 0008/067</span>
       <span class="tag">Sensoneo</span>
       <span class="tag">4 nádoby</span>
-      <span class="tag">35 měření</span>
+      <span class="tag">36 měření</span>
     </div>
   </div>
 </div>
@@ -93,9 +93,9 @@
     <div class="donut-card">
       <div class="donut-label"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#60a5fa;flex-shrink:0"></span> Papír</div>
       <canvas id="dPapir" class="donut-canvas"></canvas>
-      <div class="donut-meta"><span class="badge badge-danger">Kritické</span></div>
+      <div class="donut-meta"><span class="badge badge-warning">Pozor</span></div>
       <div class="donut-info">
-        <div>⏱ 31.3. 12:11</div>
+        <div>⏱ 31.3. 14:11</div>
         <div>🚛 St 1.4.2026 <span style='color:var(--muted)'>(Po, St, Pá)</span></div>
       </div>
     </div>
@@ -148,8 +148,8 @@
           <td>30.3.</td>
           <td>1 den</td>
           <td>St 1.4.2026 <span style='color:var(--muted)'>(Po, St, Pá)</span></td>
-          <td><span style="color:var(--danger)">30.3. 🔴</span></td>
-          <td><span class="badge badge-danger">Kritické</span></td>
+          <td><span style="color:var(--danger)">31.3. 🔴</span></td>
+          <td><span class="badge badge-warning">Pozor</span></td>
         </tr>
         <tr>
           <td><strong style="display:flex;align-items:center;gap:.5rem"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#fbbf24;flex-shrink:0"></span> Multikomoditní</strong></td>
@@ -188,14 +188,14 @@
 
 <footer>
   <a href="https://golemio.cz" target="_blank">Golemio API</a> ·
-  Kašparovo náměstí 350/1, Praha 8 · Generováno 31. 3. 2026 15:07
+  Kašparovo náměstí 350/1, Praha 8 · Generováno 31. 3. 2026 16:25
 </footer>
 
 <script>
-const labels   = ["29.3. 11:26", "29.3. 13:04", "29.3. 14:11", "29.3. 15:30", "29.3. 18:31", "29.3. 19:11", "29.3. 20:04", "29.3. 20:31", "29.3. 22:04", "30.3. 07:11", "30.3. 10:30", "30.3. 11:04", "30.3. 11:26", "30.3. 13:04", "30.3. 13:30", "30.3. 14:11", "30.3. 15:38", "30.3. 17:11", "30.3. 18:31", "30.3. 19:11", "30.3. 19:26", "30.3. 20:04", "30.3. 22:04", "30.3. 23:26", "31.3. 04:11", "31.3. 05:31", "31.3. 06:04", "31.3. 07:26", "31.3. 08:04", "31.3. 08:30", "31.3. 10:30", "31.3. 11:04", "31.3. 11:26", "31.3. 12:11", "31.3. 13:04"];
+const labels   = ["29.3. 11:26", "29.3. 13:04", "29.3. 14:11", "29.3. 15:30", "29.3. 18:31", "29.3. 19:11", "29.3. 20:04", "29.3. 20:31", "29.3. 22:04", "30.3. 07:11", "30.3. 10:30", "30.3. 11:04", "30.3. 11:26", "30.3. 13:04", "30.3. 13:30", "30.3. 14:11", "30.3. 15:38", "30.3. 17:11", "30.3. 18:31", "30.3. 19:11", "30.3. 19:26", "30.3. 20:04", "30.3. 22:04", "30.3. 23:26", "31.3. 04:11", "31.3. 05:31", "31.3. 06:04", "31.3. 07:26", "31.3. 08:04", "31.3. 08:30", "31.3. 10:30", "31.3. 11:04", "31.3. 11:26", "31.3. 12:11", "31.3. 13:04", "31.3. 14:11"];
 const datasets = [{
             label: "Pap\u00edr",
-            data: ["null", "null", 99, "null", "null", 98, "null", "null", "null", 98, "null", "null", "null", "null", "null", 54, "null", 56, "null", 62, "null", "null", "null", "null", 65, "null", "null", "null", "null", "null", "null", "null", "null", 90, "null"],
+            data: ["null", "null", 99, "null", "null", 98, "null", "null", "null", 98, "null", "null", "null", "null", "null", 54, "null", 56, "null", 62, "null", "null", "null", "null", 65, "null", "null", "null", "null", "null", "null", "null", "null", 90, "null", 77],
             borderColor: "#60a5fa",
             backgroundColor: "rgba(96,165,250,0.08)",
             pointBackgroundColor: "#60a5fa",
@@ -209,7 +209,7 @@ const datasets = [{
         },
 {
             label: "Multikomoditn\u00ed",
-            data: ["null", 98, "null", "null", "null", "null", 92, "null", 99, "null", "null", 47, "null", 53, "null", "null", "null", "null", "null", "null", "null", 49, 61, "null", "null", "null", 55, "null", 62, "null", "null", 61, "null", "null", 68],
+            data: ["null", 98, "null", "null", "null", "null", 92, "null", 99, "null", "null", 47, "null", 53, "null", "null", "null", "null", "null", "null", "null", 49, 61, "null", "null", "null", 55, "null", 62, "null", "null", 61, "null", "null", 68, "null"],
             borderColor: "#fbbf24",
             backgroundColor: "rgba(251,191,36,0.12)",
             pointBackgroundColor: "#fbbf24",
@@ -223,7 +223,7 @@ const datasets = [{
         },
 {
             label: "Kovy",
-            data: [48, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", 48, "null", "null", "null", 47, "null", "null", "null", 48, "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null"],
+            data: [48, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", 48, "null", "null", "null", 47, "null", "null", "null", 48, "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null", "null"],
             borderColor: "#64748b",
             backgroundColor: "rgba(100,116,139,0.12)",
             pointBackgroundColor: "#64748b",
@@ -237,7 +237,7 @@ const datasets = [{
         },
 {
             label: "Barevn\u00e9 sklo",
-            data: ["null", "null", "null", 100, 100, "null", "null", 100, "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", "null", "null", "null", 99, "null", "null", "null", 99, 99, "null", "null", "null", "null"],
+            data: ["null", "null", "null", 100, 100, "null", "null", 100, "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", "null", "null", "null", 99, "null", "null", "null", 99, 99, "null", "null", "null", "null", "null"],
             borderColor: "#a78bfa",
             backgroundColor: "rgba(167,139,250,0.12)",
             pointBackgroundColor: "#a78bfa",
@@ -300,7 +300,7 @@ new Chart(document.getElementById('dPapir'), {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [90, 10],
+                    data: [77, 23],
                     backgroundColor: ['#60a5fa', 'rgba(255,255,255,0.06)'],
                     borderWidth: 0
                 }]
@@ -313,8 +313,8 @@ new Chart(document.getElementById('dPapir'), {
                     ctx.save();
                     ctx.font = `800 ${Math.min(w,h)*0.24}px Segoe UI`;
                     ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
-                    ctx.fillStyle = '#f87171';
-                    ctx.fillText('90%', w/2, h/2);
+                    ctx.fillStyle = '#fbbf24';
+                    ctx.fillText('77%', w/2, h/2);
                     ctx.restore();
                 }
             }]

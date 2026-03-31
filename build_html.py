@@ -464,8 +464,7 @@ new Chart(document.getElementById('lineChart'), {{
                 labels: {{
                     color: '#e8edf5',
                     font: {{ size: 12 }},
-                    usePointStyle: true,
-                    pointStyleWidth: 10
+                    usePointStyle: true
                 }}
             }},
             tooltip: {{

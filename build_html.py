@@ -99,12 +99,12 @@ def fmt_ts(ts: str) -> str:
 
 
 def days_since(ts: str) -> str:
-    """Počet dní od daného timestampu do dnes."""
+    """Počet kalendářních dní od daného timestampu do dnes."""
     if not ts:
         return "—"
     try:
-        dt = datetime.fromisoformat(ts.replace("Z", "+00:00"))
-        d  = (datetime.now(timezone.utc) - dt).days
+        dt = datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone(PRAGUE_TZ)
+        d  = (datetime.now(PRAGUE_TZ).date() - dt.date()).days
         return f"{d} {'den' if d == 1 else 'dny' if 2 <= d <= 4 else 'dní'}"
     except Exception:
         return "—"
@@ -306,6 +306,10 @@ def build(series: dict, meta: dict) -> str:
 
     footer{{background:var(--surface);border-top:1px solid var(--border);padding:1.25rem 2rem;text-align:center;font-size:.78rem;color:var(--muted)}}
     footer a{{color:var(--accent);text-decoration:none}}
+    @media(max-width:600px){{
+      main{{padding:1rem 1rem 3rem}}
+      header{{padding:0 1rem}}
+    }}
   </style>
 </head>
 <body>
@@ -449,10 +453,10 @@ new Chart(document.getElementById('lineChart'), {{
                 grid: {{ color: 'rgba(255,255,255,.05)' }},
                 ticks: {{
                     color: '#7a8aaa',
-                    font: {{ size: 11 }},
+                    font: {{ size: window.innerWidth < 600 ? 9 : 11 }},
                     maxRotation: 45,
                     autoSkip: true,
-                    maxTicksLimit: 12
+                    maxTicksLimit: window.innerWidth < 600 ? 6 : 12
                 }}
             }},
             y: {{

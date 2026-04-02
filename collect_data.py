@@ -8,6 +8,7 @@ import csv
 import json
 import os
 import sys
+import time
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -53,8 +54,17 @@ def fetch_station() -> dict:
         STATION_URL,
         headers={"x-access-token": API_TOKEN, "Accept": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        data = json.loads(resp.read().decode())
+    for attempt in range(1, 3):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                data = json.loads(resp.read().decode())
+            break
+        except Exception as e:
+            if attempt < 2:
+                log(f"  Pokus {attempt} selhal ({e}), zkouším znovu za 10s...")
+                time.sleep(10)
+            else:
+                raise
     if isinstance(data, dict) and data.get("type") == "FeatureCollection":
         features = data["features"]
     elif isinstance(data, list):

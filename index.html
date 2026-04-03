@@ -75,7 +75,7 @@
 <body>
 
 <header>
-  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 3. 4. 2026 12:39</div>
+  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 3. 4. 2026 13:37</div>
 </header>
 
 <div class="hero">
@@ -85,7 +85,7 @@
       <span>📍 Praha 8 · Stanice č. 0008/067</span>
       <span class="tag">Sensoneo</span>
       <span class="tag">4 nádoby</span>
-      <span class="tag">105 měření</span>
+      <span class="tag">108 měření</span>
     </div>
   </div>
 </div>
@@ -100,7 +100,7 @@
       <canvas id="dPapir" class="donut-canvas"></canvas>
       <div class="donut-meta"><span class="badge badge-ok">OK</span></div>
       <div class="donut-info">
-        <div>⏱ 3.4. 11:31</div>
+        <div>⏱ 3.4. 12:11</div>
         <div>🚛 Po 6.4.2026 <span style='color:var(--muted)'>(Po, St, Pá)</span></div>
       </div>
     </div>
@@ -109,7 +109,7 @@
       <canvas id="dMulti" class="donut-canvas"></canvas>
       <div class="donut-meta"><span class="badge badge-ok">OK</span></div>
       <div class="donut-info">
-        <div>⏱ 3.4. 11:03</div>
+        <div>⏱ 3.4. 13:03</div>
         <div>🚛 Po 6.4.2026 <span style='color:var(--muted)'>(Po, Pá)</span></div>
       </div>
     </div>
@@ -118,7 +118,7 @@
       <canvas id="dKovy" class="donut-canvas"></canvas>
       <div class="donut-meta"><span class="badge badge-ok">OK</span></div>
       <div class="donut-info">
-        <div>⏱ 3.4. 11:26</div>
+        <div>⏱ 3.4. 12:25</div>
         <div>🚛 Út 21.4.2026 <span style='color:var(--muted)'>(Út)</span></div>
       </div>
     </div>
@@ -153,7 +153,7 @@
           <td>3.4.</td>
           <td>0 dní</td>
           <td>Po 6.4.2026 <span style='color:var(--muted)'>(Po, St, Pá)</span></td>
-          <td><span style="color:var(--warning)">5.4. ⚠️</span></td>
+          <td>6.4.</td>
           <td><span class="badge badge-ok">OK</span></td>
         </tr>
         <tr>
@@ -161,7 +161,7 @@
           <td>3.4.</td>
           <td>0 dní</td>
           <td>Po 6.4.2026 <span style='color:var(--muted)'>(Po, Pá)</span></td>
-          <td><span style="color:var(--warning)">5.4. ⚠️</span></td>
+          <td><span style="color:var(--warning)">4.4. ⚠️</span></td>
           <td><span class="badge badge-ok">OK</span></td>
         </tr>
         <tr>
@@ -193,14 +193,14 @@
 
 <footer>
   <a href="https://golemio.cz" target="_blank">Golemio API</a> ·
-  Kašparovo náměstí 350/1, Praha 8 · Generováno 3. 4. 2026 12:39
+  Kašparovo náměstí 350/1, Praha 8 · Generováno 3. 4. 2026 13:37
 </footer>
 
 <script>
-const labels   = ["29.3. 11:26", "29.3. 13:04", "29.3. 14:11", "29.3. 15:30", "29.3. 18:31", "29.3. 19:11", "29.3. 20:04", "29.3. 20:31", "29.3. 22:04", "30.3. 07:11", "30.3. 10:30", "30.3. 11:04", "30.3. 11:26", "30.3. 13:04", "30.3. 13:30", "30.3. 14:11", "30.3. 15:38", "30.3. 17:11", "30.3. 18:31", "30.3. 19:11", "30.3. 19:26", "30.3. 20:04", "30.3. 22:04", "30.3. 23:26", "31.3. 04:11", "31.3. 05:31", "31.3. 06:04", "31.3. 07:26", "31.3. 08:04", "31.3. 08:30", "31.3. 10:30", "31.3. 11:04", "31.3. 11:26", "31.3. 12:11", "31.3. 13:04", "31.3. 14:11", "31.3. 15:26", "31.3. 15:30", "31.3. 17:11", "31.3. 18:31", "31.3. 19:11", "31.3. 19:26", "31.3. 20:04", "31.3. 20:31", "31.3. 22:04", "1.4. 02:11", "1.4. 03:26", "1.4. 05:30", "1.4. 06:04", "1.4. 07:11", "1.4. 07:26", "1.4. 08:04", "1.4. 08:30", "1.4. 09:11", "1.4. 10:30", "1.4. 11:04", "1.4. 11:26", "1.4. 12:11", "1.4. 13:04", "1.4. 14:11", "1.4. 15:26", "1.4. 17:11", "1.4. 18:30", "1.4. 18:46", "1.4. 19:11", "1.4. 19:26", "1.4. 20:03", "1.4. 20:31", "1.4. 22:04", "1.4. 23:26", "2.4. 02:11", "2.4. 03:04", "2.4. 03:26", "2.4. 05:30", "2.4. 06:04", "2.4. 07:11", "2.4. 07:26", "2.4. 08:04", "2.4. 08:30", "2.4. 09:11", "2.4. 11:03", "2.4. 11:26", "2.4. 12:11", "2.4. 13:04", "2.4. 13:30", "2.4. 14:11", "2.4. 15:26", "2.4. 17:11", "2.4. 18:30", "2.4. 19:11", "2.4. 19:26", "2.4. 20:03", "2.4. 22:03", "3.4. 01:04", "3.4. 03:26", "3.4. 03:30", "3.4. 04:11", "3.4. 05:30", "3.4. 07:11", "3.4. 07:26", "3.4. 08:04", "3.4. 09:11", "3.4. 11:03", "3.4. 11:26", "3.4. 11:31"];
+const labels   = ["29.3. 11:26", "29.3. 13:04", "29.3. 14:11", "29.3. 15:30", "29.3. 18:31", "29.3. 19:11", "29.3. 20:04", "29.3. 20:31", "29.3. 22:04", "30.3. 07:11", "30.3. 10:30", "30.3. 11:04", "30.3. 11:26", "30.3. 13:04", "30.3. 13:30", "30.3. 14:11", "30.3. 15:38", "30.3. 17:11", "30.3. 18:31", "30.3. 19:11", "30.3. 19:26", "30.3. 20:04", "30.3. 22:04", "30.3. 23:26", "31.3. 04:11", "31.3. 05:31", "31.3. 06:04", "31.3. 07:26", "31.3. 08:04", "31.3. 08:30", "31.3. 10:30", "31.3. 11:04", "31.3. 11:26", "31.3. 12:11", "31.3. 13:04", "31.3. 14:11", "31.3. 15:26", "31.3. 15:30", "31.3. 17:11", "31.3. 18:31", "31.3. 19:11", "31.3. 19:26", "31.3. 20:04", "31.3. 20:31", "31.3. 22:04", "1.4. 02:11", "1.4. 03:26", "1.4. 05:30", "1.4. 06:04", "1.4. 07:11", "1.4. 07:26", "1.4. 08:04", "1.4. 08:30", "1.4. 09:11", "1.4. 10:30", "1.4. 11:04", "1.4. 11:26", "1.4. 12:11", "1.4. 13:04", "1.4. 14:11", "1.4. 15:26", "1.4. 17:11", "1.4. 18:30", "1.4. 18:46", "1.4. 19:11", "1.4. 19:26", "1.4. 20:03", "1.4. 20:31", "1.4. 22:04", "1.4. 23:26", "2.4. 02:11", "2.4. 03:04", "2.4. 03:26", "2.4. 05:30", "2.4. 06:04", "2.4. 07:11", "2.4. 07:26", "2.4. 08:04", "2.4. 08:30", "2.4. 09:11", "2.4. 11:03", "2.4. 11:26", "2.4. 12:11", "2.4. 13:04", "2.4. 13:30", "2.4. 14:11", "2.4. 15:26", "2.4. 17:11", "2.4. 18:30", "2.4. 19:11", "2.4. 19:26", "2.4. 20:03", "2.4. 22:03", "3.4. 01:04", "3.4. 03:26", "3.4. 03:30", "3.4. 04:11", "3.4. 05:30", "3.4. 07:11", "3.4. 07:26", "3.4. 08:04", "3.4. 09:11", "3.4. 11:03", "3.4. 11:26", "3.4. 11:31", "3.4. 12:11", "3.4. 12:25", "3.4. 13:03"];
 const datasets = [{
             label: "Pap\u00edr",
-            data: ["null", "null", 99, "null", "null", 98, "null", "null", "null", 98, "null", "null", "null", "null", "null", 54, "null", 56, "null", 62, "null", "null", "null", "null", 65, "null", "null", "null", "null", "null", "null", "null", "null", 90, "null", 77, "null", "null", 74, "null", 80, "null", "null", "null", "null", 81, "null", "null", "null", 18, "null", "null", "null", 18, "null", "null", "null", 56, "null", 53, "null", 57, "null", "null", 65, "null", "null", "null", "null", "null", 86, "null", "null", "null", "null", 86, "null", "null", "null", 86, "null", "null", 65, "null", "null", 80, "null", 86, "null", 84, "null", "null", "null", "null", "null", "null", 87, "null", 87, "null", "null", 81, "null", "null", 20],
+            data: ["null", "null", 99, "null", "null", 98, "null", "null", "null", 98, "null", "null", "null", "null", "null", 54, "null", 56, "null", 62, "null", "null", "null", "null", 65, "null", "null", "null", "null", "null", "null", "null", "null", 90, "null", 77, "null", "null", 74, "null", 80, "null", "null", "null", "null", 81, "null", "null", "null", 18, "null", "null", "null", 18, "null", "null", "null", 56, "null", 53, "null", 57, "null", "null", 65, "null", "null", "null", "null", "null", 86, "null", "null", "null", "null", 86, "null", "null", "null", 86, "null", "null", 65, "null", "null", 80, "null", 86, "null", 84, "null", "null", "null", "null", "null", "null", 87, "null", 87, "null", "null", 81, "null", "null", 20, 0, "null", "null"],
             borderColor: "#60a5fa",
             backgroundColor: "rgba(96,165,250,0.08)",
             pointBackgroundColor: "#60a5fa",
@@ -214,7 +214,7 @@ const datasets = [{
         },
 {
             label: "Multikomoditn\u00ed",
-            data: ["null", 98, "null", "null", "null", "null", 92, "null", 99, "null", "null", 47, "null", 53, "null", "null", "null", "null", "null", "null", "null", 49, 61, "null", "null", "null", 55, "null", 62, "null", "null", 61, "null", "null", 68, "null", "null", "null", "null", "null", "null", "null", 74, "null", 83, "null", "null", "null", 80, "null", "null", 80, "null", "null", "null", 16, "null", "null", 18, "null", "null", "null", "null", "null", "null", "null", 53, "null", 55, "null", "null", 53, "null", "null", 56, "null", "null", 68, "null", "null", 65, "null", "null", 68, "null", "null", "null", "null", "null", "null", "null", 96, 93, 89, "null", "null", "null", "null", "null", "null", 18, "null", 27, "null", "null"],
+            data: ["null", 98, "null", "null", "null", "null", 92, "null", 99, "null", "null", 47, "null", 53, "null", "null", "null", "null", "null", "null", "null", 49, 61, "null", "null", "null", 55, "null", 62, "null", "null", 61, "null", "null", 68, "null", "null", "null", "null", "null", "null", "null", 74, "null", 83, "null", "null", "null", 80, "null", "null", 80, "null", "null", "null", 16, "null", "null", 18, "null", "null", "null", "null", "null", "null", "null", 53, "null", 55, "null", "null", 53, "null", "null", 56, "null", "null", 68, "null", "null", 65, "null", "null", 68, "null", "null", "null", "null", "null", "null", "null", 96, 93, 89, "null", "null", "null", "null", "null", "null", 18, "null", 27, "null", "null", "null", "null", 33],
             borderColor: "#fbbf24",
             backgroundColor: "rgba(251,191,36,0.12)",
             pointBackgroundColor: "#fbbf24",
@@ -228,7 +228,7 @@ const datasets = [{
         },
 {
             label: "Kovy",
-            data: [48, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", 48, "null", "null", "null", 47, "null", "null", "null", 48, "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null", "null", "null", 45, "null", "null", "null", 48, "null", "null", "null", "null", "null", 48, "null", "null", "null", 53, "null", "null", 53, "null", 53, "null", "null", "null", 53, "null", "null", 53, "null", "null", "null", 53, "null", "null", "null", "null", 52, "null", "null", "null", "null", 52, "null", "null", "null", 58, "null", "null", "null", 58, "null", "null", "null", "null", 58, "null", "null", "null", 50, "null"],
+            data: [48, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", "null", 48, "null", "null", "null", 47, "null", "null", "null", 48, "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null", "null", 48, "null", "null", "null", "null", 48, "null", "null", "null", "null", 45, "null", "null", "null", 48, "null", "null", "null", "null", "null", 48, "null", "null", "null", 53, "null", "null", 53, "null", 53, "null", "null", "null", 53, "null", "null", 53, "null", "null", "null", 53, "null", "null", "null", "null", 52, "null", "null", "null", "null", 52, "null", "null", "null", 58, "null", "null", "null", 58, "null", "null", "null", "null", 58, "null", "null", "null", 50, "null", "null", 58, "null"],
             borderColor: "#64748b",
             backgroundColor: "rgba(100,116,139,0.12)",
             pointBackgroundColor: "#64748b",
@@ -242,7 +242,7 @@ const datasets = [{
         },
 {
             label: "Barevn\u00e9 sklo",
-            data: ["null", "null", "null", 100, 100, "null", "null", 100, "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", "null", "null", "null", 99, "null", "null", "null", 99, 99, "null", "null", "null", "null", "null", "null", 93, "null", 99, "null", "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", "null", 99, "null", 94, "null", "null", "null", "null", "null", "null", "null", 100, "null", "null", "null", "null", 99, "null", "null", "null", "null", "null", 94, "null", "null", "null", "null", 94, "null", "null", "null", "null", "null", 94, "null", "null", "null", 100, "null", "null", "null", "null", "null", "null", 100, "null", 94, "null", "null", "null", "null", "null", "null", "null"],
+            data: ["null", "null", "null", 100, 100, "null", "null", 100, "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", "null", "null", "null", 99, "null", "null", "null", 99, 99, "null", "null", "null", "null", "null", "null", 93, "null", 99, "null", "null", "null", 99, "null", "null", "null", 99, "null", "null", "null", "null", 99, "null", 94, "null", "null", "null", "null", "null", "null", "null", 100, "null", "null", "null", "null", 99, "null", "null", "null", "null", "null", 94, "null", "null", "null", "null", 94, "null", "null", "null", "null", "null", 94, "null", "null", "null", 100, "null", "null", "null", "null", "null", "null", 100, "null", 94, "null", "null", "null", "null", "null", "null", "null", "null", "null", "null"],
             borderColor: "#a78bfa",
             backgroundColor: "rgba(167,139,250,0.12)",
             pointBackgroundColor: "#a78bfa",
@@ -307,7 +307,7 @@ new Chart(document.getElementById('dPapir'), {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [20, 80],
+                    data: [0, 100],
                     backgroundColor: ['#60a5fa', 'rgba(255,255,255,0.06)'],
                     borderWidth: 0
                 }]
@@ -321,7 +321,7 @@ new Chart(document.getElementById('dPapir'), {
                     ctx.font = `800 ${Math.min(w,h)*0.24}px Segoe UI`;
                     ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
                     ctx.fillStyle = '#34d399';
-                    ctx.fillText('20%', w/2, h/2);
+                    ctx.fillText('0%', w/2, h/2);
                     ctx.restore();
                 }
             }]
@@ -330,7 +330,7 @@ new Chart(document.getElementById('dMulti'), {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [27, 73],
+                    data: [33, 67],
                     backgroundColor: ['#fbbf24', 'rgba(255,255,255,0.06)'],
                     borderWidth: 0
                 }]
@@ -344,7 +344,7 @@ new Chart(document.getElementById('dMulti'), {
                     ctx.font = `800 ${Math.min(w,h)*0.24}px Segoe UI`;
                     ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
                     ctx.fillStyle = '#34d399';
-                    ctx.fillText('27%', w/2, h/2);
+                    ctx.fillText('33%', w/2, h/2);
                     ctx.restore();
                 }
             }]
@@ -353,7 +353,7 @@ new Chart(document.getElementById('dKovy'), {
             type: 'doughnut',
             data: {
                 datasets: [{
-                    data: [50, 50],
+                    data: [58, 42],
                     backgroundColor: ['#64748b', 'rgba(255,255,255,0.06)'],
                     borderWidth: 0
                 }]
@@ -367,7 +367,7 @@ new Chart(document.getElementById('dKovy'), {
                     ctx.font = `800 ${Math.min(w,h)*0.24}px Segoe UI`;
                     ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
                     ctx.fillStyle = '#34d399';
-                    ctx.fillText('50%', w/2, h/2);
+                    ctx.fillText('58%', w/2, h/2);
                     ctx.restore();
                 }
             }]

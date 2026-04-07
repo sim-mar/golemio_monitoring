@@ -20,7 +20,7 @@ Vše běží automaticky přes **GitHub Actions**.
 | Kovy | 41580 | Sensoneo C01346 | Út |
 | Barevné sklo | 42883 | Sensoneo C01343 | Čt |
 
-Všechny nádoby jsou podzemního typu **3000 Podzemní SV**, vybavené senzory Sensoneo s adaptivní frekvencí měření (měří hustěji při vysokém zaplnění).
+Všechny nádoby jsou podzemního typu **3000 Podzemní SV**, vybavené senzory Sensoneo.
 
 ## Dashboard
 

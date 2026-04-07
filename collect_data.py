@@ -1,7 +1,7 @@
 """
 Golemio Waste Sensor Collector
 Stahuje aktuální měření nádob na Kašparově náměstí 350/1 (stanice 5262)
-a přidává je do CSV. Spouštěj jako naplánovanou úlohu (Task Scheduler).
+a přidává je do CSV.
 """
 
 import csv

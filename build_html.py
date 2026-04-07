@@ -152,7 +152,7 @@ def fmt_svoz(dalsi_svoz: str, dny_svozu: str) -> str:
             label += f" <span style='color:var(--muted)'>({html.escape(dny_svozu)})</span>"
         return label
     except Exception:
-        return dalsi_svoz
+        return html.escape(dalsi_svoz)
 
 
 def build(series: dict, meta: dict) -> str:

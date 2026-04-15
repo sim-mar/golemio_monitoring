@@ -56,7 +56,7 @@ def fetch_station() -> dict:
     )
     for attempt in range(1, 3):
         try:
-            with urllib.request.urlopen(req, timeout=60) as resp:
+            with urllib.request.urlopen(req, timeout=90) as resp:
                 data = json.loads(resp.read().decode())
             break
         except Exception as e:

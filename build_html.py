@@ -502,7 +502,7 @@ const chart = new Chart(document.getElementById('lineChart'), {{
             y: {{
                 min: 0, max: 105,
                 grid: {{ color: 'rgba(255,255,255,.05)' }},
-                ticks: {{ color: '#7a8aaa', callback: v => v <= 100 ? v + ' %' : '' }}
+                ticks: {{ color: '#7a8aaa', stepSize: 20, callback: v => v <= 100 ? v + ' %' : '' }}
             }}
         }},
         plugins: {{

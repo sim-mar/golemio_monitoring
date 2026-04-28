@@ -79,7 +79,7 @@
 <body>
 
 <header>
-  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 28. 4. 2026 19:31</div>
+  <div class="header-meta"><strong>Golemio API</strong> · Praha-8<br>Generováno: 28. 4. 2026 19:48</div>
 </header>
 
 <div class="hero">
@@ -202,7 +202,7 @@
 
 <footer>
   <a href="https://golemio.cz" target="_blank">Golemio API</a> ·
-  Kašparovo náměstí 350/1, Praha 8 · Generováno 28. 4. 2026 19:31
+  Kašparovo náměstí 350/1, Praha 8 · Generováno 28. 4. 2026 19:48
 </footer>
 
 <script>
@@ -317,6 +317,7 @@ const chart = new Chart(document.getElementById('lineChart'), {
             y: {
                 min: 0, max: 105,
                 grid: { color: 'rgba(255,255,255,.05)' },
+                afterFit(scale) { scale.width = 52; },
                 ticks: { color: '#7a8aaa', stepSize: 20, autoSkip: false, callback: v => v <= 100 ? v + ' %' : '' }
             }
         },

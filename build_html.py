@@ -503,6 +503,7 @@ const chart = new Chart(document.getElementById('lineChart'), {{
             y: {{
                 min: 0, max: 105,
                 grid: {{ color: 'rgba(255,255,255,.05)' }},
+                afterFit(scale) {{ scale.width = 52; }},
                 ticks: {{ color: '#7a8aaa', stepSize: 20, autoSkip: false, callback: v => v <= 100 ? v + ' %' : '' }}
             }}
         }},

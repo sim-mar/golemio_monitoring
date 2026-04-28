@@ -167,6 +167,7 @@ def build(series: dict, meta: dict) -> str:
     # JS data pro line chart — společná osa X (unikátní timestampy všech senzorů)
     all_ts = sorted({ts for pts in series.values() for ts, _ in pts})
     labels_js = json.dumps([fmt_ts(ts) for ts in all_ts])
+    timestamps_js = json.dumps([ts.replace(".000Z", "Z").replace(".000+", "+") for ts in all_ts])
 
     LABELS = {
         "Papír": "Papír",
@@ -301,6 +302,10 @@ def build(series: dict, meta: dict) -> str:
     .mini-bar-track{{width:100px;height:7px;background:rgba(255,255,255,.07);border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:.5rem}}
     .mini-bar-fill{{height:100%;border-radius:4px}}
 
+    .slider-wrap{{display:flex;align-items:center;gap:.75rem;margin-top:1rem;padding-top:.75rem;border-top:1px solid var(--border)}}
+    .slider-label{{font-size:.75rem;color:var(--muted);white-space:nowrap;min-width:70px}}
+    .slider-label:last-child{{text-align:right}}
+    #timeSlider{{flex:1;accent-color:var(--accent);height:4px;cursor:pointer}}
     .info-box{{background:rgba(0,119,182,.1);border:1px solid rgba(0,119,182,.35);border-radius:var(--radius);padding:.9rem 1.25rem;font-size:.83rem;color:rgba(232,237,245,.7);margin-bottom:2rem}}
     .info-box strong{{color:var(--accent)}}
 
@@ -377,6 +382,11 @@ def build(series: dict, meta: dict) -> str:
   <div class="section-head"><h2>Průběh zaplnění v čase</h2><div class="line"></div></div>
   <div class="chart-card">
     <canvas id="lineChart"></canvas>
+    <div class="slider-wrap">
+      <span class="slider-label" id="sliderFrom"></span>
+      <input type="range" id="timeSlider" min="0" max="100" value="100" step="1">
+      <span class="slider-label" id="sliderTo"></span>
+    </div>
   </div>
 
   <!-- TABLE -->
@@ -437,17 +447,47 @@ def build(series: dict, meta: dict) -> str:
 </footer>
 
 <script>
-const labels   = {labels_js};
-const datasets = [{datasets_str}];
+const allLabels     = {labels_js};
+const allTimestamps = {timestamps_js};
+const allDatasets   = [{datasets_str}];
 
-// Line chart
-new Chart(document.getElementById('lineChart'), {{
+const WINDOW_MS = 14 * 24 * 3600 * 1000;
+const allTimes  = allTimestamps.map(ts => new Date(ts).getTime());
+const firstMs   = allTimes[0];
+const lastMs    = allTimes[allTimes.length - 1];
+
+function getWindow(offsetPct) {{
+    const span    = Math.max(lastMs - firstMs - WINDOW_MS, 0);
+    const startMs = firstMs + span * offsetPct;
+    const endMs   = startMs + WINDOW_MS;
+    const idx     = allTimes.reduce((a, t, i) => {{ if (t >= startMs && t <= endMs) a.push(i); return a; }}, []);
+    return idx;
+}}
+
+function fmtSliderDate(ms) {{
+    const d = new Date(ms);
+    return `${{d.getDate()}}.${{d.getMonth()+1}}.`;
+}}
+
+function updateSliderLabels(offsetPct) {{
+    const span    = Math.max(lastMs - firstMs - WINDOW_MS, 0);
+    const startMs = firstMs + span * offsetPct;
+    document.getElementById('sliderFrom').textContent = fmtSliderDate(startMs);
+    document.getElementById('sliderTo').textContent   = fmtSliderDate(Math.min(startMs + WINDOW_MS, lastMs));
+}}
+
+const initIdx    = getWindow(1);
+const initLabels = initIdx.map(i => allLabels[i]);
+const initData   = allDatasets.map(ds => ({{ ...ds, data: initIdx.map(i => ds.data[i]) }}));
+
+const chart = new Chart(document.getElementById('lineChart'), {{
     type: 'line',
-    data: {{ labels, datasets }},
+    data: {{ labels: initLabels, datasets: initData }},
     options: {{
         responsive: true,
         maintainAspectRatio: false,
         interaction: {{ mode: 'index', intersect: false }},
+        animation: false,
         scales: {{
             x: {{
                 grid: {{ color: 'rgba(255,255,255,.05)' }},
@@ -460,9 +500,9 @@ new Chart(document.getElementById('lineChart'), {{
                 }}
             }},
             y: {{
-                min: 0, max: 100,
+                min: 0, max: 105,
                 grid: {{ color: 'rgba(255,255,255,.05)' }},
-                ticks: {{ color: '#7a8aaa', callback: v => v + ' %' }}
+                ticks: {{ color: '#7a8aaa', callback: v => v <= 100 ? v + ' %' : '' }}
             }}
         }},
         plugins: {{
@@ -485,6 +525,17 @@ new Chart(document.getElementById('lineChart'), {{
             }}
         }}
     }}
+}});
+
+updateSliderLabels(1);
+
+document.getElementById('timeSlider').addEventListener('input', function() {{
+    const pct = this.value / 100;
+    const idx = getWindow(pct);
+    chart.data.labels = idx.map(i => allLabels[i]);
+    chart.data.datasets.forEach((ds, di) => {{ ds.data = idx.map(i => allDatasets[di].data[i]); }});
+    chart.update('none');
+    updateSliderLabels(pct);
 }});
 
 // Donut charts

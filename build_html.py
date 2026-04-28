@@ -451,7 +451,7 @@ const allLabels     = {labels_js};
 const allTimestamps = {timestamps_js};
 const allDatasets   = [{datasets_str}];
 
-const WINDOW_MS = 14 * 24 * 3600 * 1000;
+const WINDOW_MS = (window.innerWidth < 600 ? 7 : 14) * 24 * 3600 * 1000;
 const allTimes  = allTimestamps.map(ts => new Date(ts).getTime());
 const firstMs   = allTimes[0];
 const lastMs    = allTimes[allTimes.length - 1];

@@ -488,6 +488,7 @@ const chart = new Chart(document.getElementById('lineChart'), {{
         maintainAspectRatio: false,
         interaction: {{ mode: 'index', intersect: false }},
         animation: false,
+        layout: {{ padding: {{ top: 12 }} }},
         scales: {{
             x: {{
                 grid: {{ color: 'rgba(255,255,255,.05)' }},

@@ -54,15 +54,15 @@ def fetch_station() -> dict:
         STATION_URL,
         headers={"x-access-token": API_TOKEN, "Accept": "application/json"},
     )
-    for attempt in range(1, 3):
+    for attempt in range(1, 4):
         try:
             with urllib.request.urlopen(req, timeout=90) as resp:
                 data = json.loads(resp.read().decode())
             break
         except Exception as e:
-            if attempt < 2:
-                log(f"  Pokus {attempt} selhal ({e}), zkouším znovu za 10s...")
-                time.sleep(10)
+            if attempt < 3:
+                log(f"  Pokus {attempt} selhal ({e}), zkouším znovu za 120s...")
+                time.sleep(120)
             else:
                 raise
     if isinstance(data, dict) and data.get("type") == "FeatureCollection":
